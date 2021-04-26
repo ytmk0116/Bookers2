@@ -1,5 +1,9 @@
-<div class="container" style="margin-top: 70px">
-  <h1>User info</h1>
+<main>
+  <p id="notice"></p>
+  <div class='container'>
+    <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  <h2>User info</h2>
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,20 +15,22 @@
       </ul>
     </div>
     <% end %>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :name, 'Name' %>
-      <%= f.text_field :name, class:'' %>
+      <%= f.text_field :name, class:'form-control name' %>
     </div>
-    <div class="field">
-      <%= f.label :profile_image, 'Image' %>
-      <%= f.attachment_field :profile_image %>
+    <div class="form-group">
+      <%= f.label :user_image, 'Image' %>
+      <%= f.attachment_field :profile_image, class: "form-control-file user_image" %>
+
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :introduction, 'Introduction' %>
-      <%= f.text_area :introduction, class:'' %>
+      <%= f.text_area :introduction, class:'form-control introduction' %>
     </div>
     <div>
-      <%= f.submit 'Update User', class:'' %>
+      <%= f.submit 'Update User', class:'btn btn-secondary' %>
     </div>
   <% end %>
-</div>
+  </div>
+</main>
