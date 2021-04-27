@@ -1,7 +1,4 @@
 
-<!--<div class="container" style="margin-top: 70px">-->
-<!--  <div class="row">-->
-<!--    <div class="">-->
       <h1>Editing Book</h2>
       <% if @book.errors.any? %>
       <div id="error_explanation">
@@ -13,7 +10,7 @@
         </ul>
       </div>
       <% end %>
-      <%= form_for(@book) do |f| %>
+      <%= form_with model:@book, local: true do |f| %>
         <div class="field row">
           <%= f.label :title, 'Title' %>
           <%= f.text_field :title, class:'col-xs-12' %>
